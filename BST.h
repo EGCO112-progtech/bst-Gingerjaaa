@@ -123,11 +123,10 @@ void treeOrder( TreeNodePtr treePtr,int a )
       int i;
       if(treePtr != NULL)
       {
-         
          treeOrder( treePtr->rightPtr,a+1);
          for(i=0;i<a;i++)
          {
-            printf("    ");
+            printf("   ");
          }
          printf("%3d\n",treePtr->data);
          treeOrder( treePtr->leftPtr ,a+1);
