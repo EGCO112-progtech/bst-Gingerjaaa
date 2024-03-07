@@ -48,8 +48,7 @@ void insertNode( BST *b, int value ){
 while(inserted==0){
    if(t->data >=value){
      /* move/insert to the left*/
-     if(t->leftPtr==NULL)
-     {
+     if(t->leftPtr==NULL){
          t->leftPtr=new_node;
          inserted=1;
      }
@@ -57,8 +56,7 @@ while(inserted==0){
     }
   	 else{
 	      /* move/ insert to the right*/
-      if(t->rightPtr==NULL)
-      {
+      if(t->rightPtr==NULL){
          t->rightPtr=new_node;
          inserted=1;
       }
@@ -66,12 +64,8 @@ while(inserted==0){
    }
     } //end while
 	}//end else;
-   
- 		
-  
-  b->size++;
+   b->size++;
   }
-  
 }//end function
 
 
@@ -79,12 +73,9 @@ void inOrder( TreeNodePtr treePtr )
 { 
    // if tree is not empty, then traverse
    if ( treePtr != NULL ) {        
-        
-      inOrder( treePtr->leftPtr ); //Recursion to the left
- 
-      printf("%3d",treePtr->data) ;  //print the value 
-   
-      inOrder( treePtr->rightPtr ); //Recursion to the right
+        inOrder( treePtr->leftPtr ); //Recursion to the left
+        printf("%3d",treePtr->data) ;  //print the value 
+        inOrder( treePtr->rightPtr ); //Recursion to the right
    } // end if                          
 } // end 
 
@@ -93,12 +84,9 @@ void inOrder( TreeNodePtr treePtr )
 { 
    // if tree is not empty, then traverse
    if ( treePtr != NULL ) {        
-        
-      printf("%3d",treePtr->data) ;  //print the value 
-
-      preOrder( treePtr->leftPtr ); //Recursion to the left
-   
-      preOrder( treePtr->rightPtr ); //Recursion to the right
+        printf("%3d",treePtr->data) ;  //print the value 
+        preOrder( treePtr->leftPtr ); //Recursion to the left
+        preOrder( treePtr->rightPtr ); //Recursion to the right
    } // end if                          
 } // end 
 
@@ -107,13 +95,9 @@ void inOrder( TreeNodePtr treePtr )
 { 
    // if tree is not empty, then traverse
    if ( treePtr != NULL ) {        
-        
-      postOrder( treePtr->leftPtr ); //Recursion to the left
- 
-      postOrder( treePtr->rightPtr ); //Recursion to the right
-   
-      printf("%3d",treePtr->data) ;  //print the value 
-   
+        postOrder( treePtr->leftPtr ); //Recursion to the left
+        postOrder( treePtr->rightPtr ); //Recursion to the right
+        printf("%3d",treePtr->data) ;  //print the value 
    } // end if                          
 } // end 
 
@@ -121,15 +105,12 @@ void inOrder( TreeNodePtr treePtr )
 void treeOrder( TreeNodePtr treePtr,int a )
 {
       int i;
-      if(treePtr != NULL)
-      {
+      if(treePtr != NULL){
          treeOrder( treePtr->rightPtr,a+1);
-         for(i=0;i<a;i++)
-         {
+         for(i=0;i<a;i++){
             printf("   ");
          }
          printf("%3d\n",treePtr->data);
          treeOrder( treePtr->leftPtr ,a+1);
-         
-      }
+          }
 }
